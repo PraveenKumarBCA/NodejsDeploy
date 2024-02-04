@@ -2,6 +2,7 @@ const UserModel=require("../Appmodels/UserModel");
 const jwt=require("jsonwebtoken");
 const TOKENKEY="PRAVEEN7979";
 module.exports.createUseraccount=async(request,response)=>{
+    let Bodydata=request.body
       let Userexist=await UserModel.find({email:Bodydata.email});
     if(Userexist.length >0){
         response.send({
